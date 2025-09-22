@@ -38,37 +38,6 @@ func miner(
 	}
 }
 
-// func miner(
-// 	ctx context.Context,
-// 	wg *sync.WaitGroup,
-// 	transferPoint chan<- int,
-// 	n int,
-// 	power int,
-// ) {
-// 	defer wg.Done()
-
-// 	for {
-// Этот шахтёр завершит своё выполнение СРАЗУ после сигнала о завершении рабочего дня
-// 		fmt.Println("Я шахтер номер: ", n, " Начал добывать железо!")
-// 		select {
-// 		case <-ctx.Done():
-// 			fmt.Println("Я шахтер ", n, " Мой рабочий день закончен")
-// 			return
-// 		case <-time.After(1 * time.Second):
-// 			fmt.Println("Я шахтер номер: ", n, " Добыл железо!")
-
-// 		}
-
-// 		select {
-// 		case <-ctx.Done():
-// 			fmt.Println("Я шахтер ", n, " Мой рабочий день закончен")
-// 			return
-// 		case transferPoint <- power:
-// 			fmt.Println("Я шахтер номер: ", n, " Передал железо: ", power)
-// 		}
-// 	}
-// }
-
 // MinerPool - функция, запускающая minerCount шахтёров,
 // Позволяющая потребителям MinerPool функции получать железо от запущенных шахтёров
 // И контролирующая закрытие канала общения
